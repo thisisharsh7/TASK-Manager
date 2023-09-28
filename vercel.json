@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "src": "/",
+      "det": "/"
+    },
+    {
+      "src": "/register",
+      "det": "/"
+    },
+    {
+      "src": "/login",
+      "det": "/"
+    },
+    {
+      "src": "/task/:taskId",
+      "det": "/"
+    }
+  ]
+}
