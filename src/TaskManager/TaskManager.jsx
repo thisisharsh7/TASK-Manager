@@ -29,7 +29,6 @@ const TaskManager = ({ what2Show }) => {
     useEffect(() => {
         localStorage.setItem('tasks', JSON.stringify(allTask));
     }, [allTask]);
-    console.log(what2Show);
 
     return (
         <div className="flex flex-col items-center mt-4 bg-black">
