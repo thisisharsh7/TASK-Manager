@@ -4,6 +4,7 @@ import Register from './Register';
 import Login from './Login';
 import { useSelector } from 'react-redux';
 import Task from './TaskManager/Task';
+import NotFound from './NotFound';
 
 
 
@@ -42,6 +43,8 @@ const App = () => {
             (register)
               ?
               <Navigate to="/login" /> : <Navigate to="/register" />} exact />
+
+        <Route path='*' element={<NotFound />} />
 
       </Routes>
     </div>
