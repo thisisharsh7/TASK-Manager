@@ -11,7 +11,7 @@ const App = () => {
   const { register, login } = useSelector((state) => state.user);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[url('http://cs.gettysburg.edu/~duncjo01/assets/images/patterns/30.png')]">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[url('/bgImage.png')]">
       <Routes>
 
         <Route path="/register" element={
