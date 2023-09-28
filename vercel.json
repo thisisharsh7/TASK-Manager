@@ -2,19 +2,19 @@
   "routes": [
     {
       "src": "/",
-      "det": "/"
+      "dest": "/"
     },
     {
       "src": "/register",
-      "det": "/"
+      "dest": "/"
     },
     {
       "src": "/login",
-      "det": "/"
+      "dest": "/"
     },
     {
       "src": "/task/:taskId",
-      "det": "/"
+      "dest": "/"
     }
   ]
 }
