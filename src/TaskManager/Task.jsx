@@ -5,6 +5,7 @@ import { BeatLoader } from 'react-spinners';
 import { ADD_TASK } from '../states/reducers';
 
 
+
 const Task = () => {
     const { taskId } = useParams();
     const [taskDet, setTaskDet] = useState({

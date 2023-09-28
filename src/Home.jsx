@@ -14,8 +14,11 @@ const Home = () => {
 
   const [loading, setLoading] = useState({
     loading1: false,
-    loading2: false
+    loading2: false,
+    loading3: false
   });
+  const [what2Show, set2Show] = useState(true)
+  const [toggleText, setToggle] = useState('Task History');
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -41,6 +44,16 @@ const Home = () => {
     localStorage.setItem('login', JSON.stringify(false));
     setTimeout(loggedOut, 500);
   }
+  const handleClk = () => {
+    setLoading({ ...loading, loading3: false });
+    set2Show(!what2Show)
+    setToggle((toggleText === 'Task History') ? 'All Task' : 'Task History')
+  }
+
+  const handleClick = () => {
+    setLoading({ ...loading, loading3: true });
+    setTimeout(handleClk, 500);
+  }
 
   return (
     <div className="w-full rounded shadom-md bg-white max-w-5xl p-4 ">
@@ -51,8 +64,10 @@ const Home = () => {
             loading.loading2 ? <BeatLoader loading={loading.loading2} color='white' size={10} speedMultiplier={1.2} /> : "Create Task"
           }
         </button>
-        <button className={btnDesign}>
-          Task History
+        <button className={btnDesign} onClick={handleClick}>
+          {
+            loading.loading3 ? <BeatLoader loading={loading.loading3} color='white' size={10} speedMultiplier={1.2} /> : toggleText
+          }
         </button>
         <button
           onClick={handleLogout}
@@ -63,7 +78,7 @@ const Home = () => {
           }
         </button>
       </div>
-      <TaskManager />
+      <TaskManager what2Show={what2Show} />
     </div>
   );
 };
