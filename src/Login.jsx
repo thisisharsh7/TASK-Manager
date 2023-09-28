@@ -29,11 +29,15 @@ const Login = () => {
   const appendErrorMsg = () => {
     if (!isAppended) {
       const errorPara = document.createElement('div');
-      errorPara.innerText = 'Input field cannot be empty!';
       errorPara.classList.add('text-base', 'text-normal', 'text-red-500', 'mb-4', 'text-left')
       errorMsg.current.parentElement.append(errorPara);
       errorRef.current = errorPara;
       setIsAppended(true);
+    }
+    if (formData.email === "" || formData.password === "") {
+      errorRef.current.innerText = 'Input field cannot be empty!';
+    } else {
+      errorRef.current.innerText = 'Email or Password is not correct!';
     }
     setLoading(false);
   };
@@ -53,19 +57,11 @@ const Login = () => {
     setLoading(true);
     e.preventDefault();
     if (formData.email === "" || formData.password === "") {
-
-      if (errorRef.current) {
-        errorRef.current.innerText = 'Input field cannot be empty!';
-      }
       setTimeout(appendErrorMsg, 500);
     } else if (formData.email === userForm.email && formData.password === userForm.password) {
-
       setTimeout(removeErrorMsg, 500);
     }
     else {
-      if (errorRef.current) {
-        errorRef.current.innerText = 'Email or Password is incorrect!';
-      }
       setTimeout(appendErrorMsg, 500);
 
     }
