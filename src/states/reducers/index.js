@@ -12,7 +12,7 @@ export const user = createSlice({
         register: JSON.parse(localStorage.getItem('register')),
         login: JSON.parse(localStorage.getItem('login')),
         userForm: JSON.parse(localStorage.getItem('formData')),
-        tasks: JSON.parse(localStorage.getItem('tasks'))
+        tasks: []
     },
     reducers: {
         REGISTER: (state, action) => {
