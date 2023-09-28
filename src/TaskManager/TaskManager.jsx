@@ -28,12 +28,12 @@ const TaskManager = () => {
     useEffect(() => {
         localStorage.setItem('tasks', JSON.stringify(allTask));
     }, [allTask]);
-    
+
     return (
         <div className="flex flex-col items-center mt-4 bg-black">
             <div className="mt-4 w-full md:w-3/4 lg:w-1/2 px-6 py-4 min-h-screen">
                 {
-                    allTask.length
+                    allTask?.length
                         ?
                         allTask.map((task) => (
                             <TaskCard key={task.id} id={task.id} assign={task.assign} title={task.title} status={task.status} file={task.file} handleDelete={handleDelete} />
